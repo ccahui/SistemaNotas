@@ -16,6 +16,6 @@ class Grado extends Model
     }
 
     public function cursos(){
-        return $this->hasMany(Salon::class,'grado_id');
+        return $this->hasMany(Curso::class,'grado_id');
     }
 }
