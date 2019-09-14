@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 
 class Grado extends Model
@@ -18,4 +18,12 @@ class Grado extends Model
     public function cursos(){
         return $this->hasMany(Curso::class,'grado_id');
     }
+    
+    /*hasManyThrough Laravel Documentacion */
+    public function alumnos()
+    {
+        return $this->hasManyThrough(Alumno::class, Salon::class);
+    }
+
+
 }

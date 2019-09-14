@@ -15,4 +15,14 @@ class Alumno extends Model
         // Relacion de 1 --> * (Inverso)
         return $this->belongsTo(Salon::class,'salon_id');
     }
+
+    public function getCursos(){
+        return $this->salon->getCursos();
+    }
+
+    public function getGrado(){
+        return $this->salon->grado;
+    }
+    
+
 }

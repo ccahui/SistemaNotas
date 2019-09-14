@@ -10,14 +10,19 @@ class Salon extends Model
     protected $fillable = [
         'seccion', 'grado_id'
     ];
-    
+     
     public function grado(){
         // Relacion de 1 --> * (Inverso)
         return $this->belongsTo(Grado::class,'grado_id');
     }
-    
+
     public function alumnos(){
         return $this->hasMany(Alumno::class,'salon_id');
     }
+    
+    public function getCursos(){
+        return $this->grado->cursos;
+    }
+
 }
 
