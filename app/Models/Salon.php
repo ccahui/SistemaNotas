@@ -15,5 +15,9 @@ class Salon extends Model
         // Relacion de 1 --> * (Inverso)
         return $this->belongsTo(Grado::class,'grado_id');
     }
+    
+    public function alumnos(){
+        return $this->hasMany(Alumno::class,'salon_id');
+    }
 }
 
