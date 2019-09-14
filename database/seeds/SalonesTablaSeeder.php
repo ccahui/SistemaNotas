@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use App\Models\Salon;
+use App\Models\Grado;
+class SalonesTablaSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->crearSalonDeLosGrados();
+    }
+    
+    private function crearSalonDeLosGrados(){
+        $grados = Grado::all();
+        foreach($grados as $grado){
+            Salon::create([
+                'seccion' => 'A',
+                'grado_id' => $grado->id,
+            ]);
+            Salon::create([
+                'seccion' => 'B',
+                'grado_id' => $grado->id,
+            ]);
+        }
+    }
+
+}
