@@ -15,4 +15,5 @@ $factory->define(Salon::class, function (Faker $faker) {
         'seccion'=>$faker->lexify('Salon ???? '),
         'grado_id' => Grado::all()->random()->id, 
     ];
+    
 });

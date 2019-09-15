@@ -20,6 +20,15 @@ class Salon extends Model
         return $this->hasMany(Alumno::class,'salon_id');
     }
     
+    public function cursos(){
+        return $this->belongsToMany(Curso::class,'salon_curso_profesor','salon_id','curso_id')->withPivot('profesor_id');;
+    }
+
+    public function profesores(){
+        return $this->belongsToMany(Profesor::class,'salon_curso_profesor','salon_id','profesor_id')->withPivot('curso_id');;
+    }
+    
+
     public function getCursos(){
         return $this->grado->cursos;
     }
