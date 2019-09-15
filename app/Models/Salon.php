@@ -21,7 +21,7 @@ class Salon extends Model
     }
     
     public function cursos(){
-        return $this->belongsToMany(Curso::class,'salon_curso_profesor','salon_id','curso_id')->withPivot('profesor_id');;
+        return $this->belongsToMany(Curso::class,'salon_curso_profesor','salon_id','curso_id')->withPivot('profesor_id')->withTimestamps();
     }
 
     public function profesores(){

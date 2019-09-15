@@ -18,14 +18,11 @@ class SalonesTablaSeeder extends Seeder
     private function crearSalonDeLosGrados(){
         $grados = Grado::all();
         foreach($grados as $grado){
-            Salon::create([
-                'seccion' => 'A',
-                'grado_id' => $grado->id,
-            ]);
-            Salon::create([
-                'seccion' => 'B',
-                'grado_id' => $grado->id,
-            ]);
+            $grado->salones()->createMany([
+                ['seccion'=> "A"],
+                ['seccion'=> "B"],
+                ['seccion'=> "C"],
+             ]);
         }
     }
 

@@ -25,6 +25,8 @@ class CursosTablaSeeder extends Seeder
                ['nombre'=> "Comunicacion $grado->numero"],
                ['nombre'=> "Lenguaje $grado->numero"],
                ['nombre'=> "CTA $grado->numero"],
+               ['nombre'=> "Algebra $grado->numero"],
+               ['nombre'=> "Fisica $grado->numero"],
             ]);
         }
     }
