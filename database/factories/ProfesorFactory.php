@@ -9,6 +9,7 @@ $factory->define(Profesor::class, function (Faker $faker) {
     return [
         'nombre'=> $faker->name,
         'apellido'=>$faker->lexify('Apellido ????'),
+        'gmail' =>  preg_replace('/@example\..*/', '@gmail.com', $faker->unique()->safeEmail),
         'especialidad'=>$faker->lexify('Especialidad ???? '),
     ];
 });

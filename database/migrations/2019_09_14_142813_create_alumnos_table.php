@@ -17,6 +17,7 @@ class CreateAlumnosTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('apellido');
+            $table->string('gmail')->unique();
 
             $table->unsignedBigInteger('salon_id');
             $table->foreign('salon_id')
