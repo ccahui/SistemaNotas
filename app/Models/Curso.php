@@ -19,6 +19,10 @@ class Curso extends Model
     public function salones(){
         return $this->belongsToMany(Salon::class,'salon_curso_profesor','curso_id','salon_id')->withPivot('profesor_id');
     }
+
+    public function alumnos(){
+        return $this->belongsToMany(Alumno::class,'notas')->using(Nota::class)->withPivot('notas1','notas2','notas3');;
+    }
     
     /* TODO */
     public function profesores(){

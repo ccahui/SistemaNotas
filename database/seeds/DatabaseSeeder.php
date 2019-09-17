@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             'profesores',
             'alumnos',
             'salon_curso_profesor',
+            'notas'
         ]);
 
         $this->call(GradosTablaSeeder::class);
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ProfesorTablaSeeder::class);
         $this->call(AlumnoTablaSeeder::class);
         $this->call(PivotCursoSalonTablaSeeder::class);
+        $this->call(NotasTablaSeeder::class);
                
     }
 

@@ -16,13 +16,14 @@ class Alumno extends Model
         return $this->belongsTo(Salon::class,'salon_id');
     }
 
-    public function getCursos(){
-        return $this->salon->getCursos();
-    }
-
     public function getGrado(){
         return $this->salon->grado;
     }
+
+    public function cursos(){
+        return $this->belongsToMany(Curso::class,'notas')->using(Nota::class)->withPivot('notas1','notas2','notas3');
+    }
     
+
 
 }

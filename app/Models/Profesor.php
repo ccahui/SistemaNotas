@@ -10,11 +10,11 @@ class Profesor extends Model
     protected $fillable = [
         'nombre', 'apellido','especialidad'
     ];
-
+    /** TODO */
     public function cursos(){
         return $this->belongsToMany(Curso::class,'salon_curso_profesor','profesor_id','curso_id')->withPivot('salon_id');;
     }
-
+    /** TODO */
     public function salones(){
         return $this->belongsToMany(Salon::class,'salon_curso_profesor','profesor_id','salon_id')->withPivot('curso_id');
     }

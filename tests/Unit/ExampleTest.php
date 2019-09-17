@@ -19,14 +19,17 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        
-        $arr = array();
-        $arr['a'] = "abc";
+        /*
+            Salon
+            Curso
+        */
+        $this->assertTrue(true);
+    }
 
-
+    public function obtenerSalonesPorCadaCurso(){
         $profesor = Profesor::all()->first();
         $cursos_unicos = $profesor->cursos->unique();
-        $data = array();
+        $arrayes = array();
         foreach($cursos_unicos as $curso){
             $salones = $curso->salones()->where('profesor_id',$profesor->id)->get();
             $array = array(
@@ -35,10 +38,7 @@ class ExampleTest extends TestCase
             );
             array_push($arrayes, $array);
         }
-        // $data es un array Asociativo clave => valor
-        // foreach $data as $a
-        // $a['curso'] y $a['salones'] y obtengo los objetos curso y salones
-
+        return $arrayes;
 /*
         foreach($arrayes as $array){
             print($array['curso']->id." - ".$array['curso']->nombre."\n");
@@ -48,6 +48,5 @@ class ExampleTest extends TestCase
             print("\n");
         }
 */
-        $this->assertTrue(true);
     }
 }
