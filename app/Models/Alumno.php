@@ -21,7 +21,7 @@ class Alumno extends Model
     }
 
     public function cursos(){
-        return $this->belongsToMany(Curso::class,'notas')->using(Nota::class)->withPivot('notas1','notas2','notas3');
+        return $this->belongsToMany(Curso::class,'notas')->using(Nota::class)->withPivot('id','notas1','notas2','notas3');
     }
     
 
