@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> @yield('title') - Sistema Notas</title>
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+      <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <!--Import Google Icon Font-->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <style>
+  
+    </style>
+
+    </head>
+<body>
+
+                <div class="navbar-fixed">
+                <nav class="nav-wrapper indigo">
+                  <div class="container">
+                    <a href="#" class="brand-logo">Proyecto Notas</a>
+                    <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                      <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                      <li><a href="">Home</a></li>
+                      <li><a href="">About</a></li>
+                      <li><a href="">Contact</a></li>
+                      <li><a href="" class="btn white indigo-text">Login</a></li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            
+              <ul class="sidenav" id="mobile-links">
+                <li><a href="/profesores">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="" class="indigo-text">Login</a></li>
+              </ul>
+
+
+  

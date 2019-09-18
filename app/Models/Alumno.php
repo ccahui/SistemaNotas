@@ -8,7 +8,7 @@ class Alumno extends Model
 {
     protected $table = 'alumnos';
     protected $fillable = [
-        'nombre', 'apellido', 'salon_id'
+        'nombre', 'apellido', 'salon_id','gmail'
     ];
 
     public function salon(){

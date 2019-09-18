@@ -24,7 +24,7 @@ class ExampleTest extends TestCase
             Curso
         */
 
-        $this->obtenerAlumnosDeUnSalonYUnCurso();
+        //$this->obtenerAlumnosDeUnSalonYUnCurso();
         $this->assertTrue(true);
     }
     public function obtenerAlumnosDeUnSalonYUnCurso(){
