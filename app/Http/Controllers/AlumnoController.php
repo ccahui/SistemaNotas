@@ -67,7 +67,12 @@ class AlumnoController extends Controller
      */
     public function show($id)
     {
-        //
+        $alumno = Alumno::findOrFail($id);
+        $data = [
+            'alumno'=>$alumno,
+            'titulo'=>'Alumno'
+        ];
+        return view('alumnos/show', $data);
     }
 
     /**
@@ -121,5 +126,24 @@ class AlumnoController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function search(Request $request){
+        $buscar = $request->query('buscar');
+        $alumnos = [];
+       
+        if($buscar){
+            $alumnos = Alumno::where('apellido', 'like', "%$buscar%")
+            ->orWhere('nombre', 'like', "%$buscar%")
+            ->get();
+        }
+       
+        $data = [
+            'titulo'=>'Buscar Alumno',
+            'buscar'=>$buscar,
+            'alumnos'=>$alumnos
+
+        ];
+
+        return view('alumnos/search',$data);
     }
 }

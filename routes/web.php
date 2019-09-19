@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/alumnos/search','AlumnoController@search');
 Route::resource('alumnos', 'AlumnoController');
+

@@ -33,7 +33,7 @@ class AlumnoTest extends TestCase
     {
         $response = $this->get("/alumnos");
         $response->assertStatus(200)
-            ->assertSee('No hay Alumnos Registrados');
+            ->assertSee('No se obtuvieron resultados');
     }
 
     public function testCreate(){
@@ -100,6 +100,37 @@ class AlumnoTest extends TestCase
             'nombre'=> "Cristian",
             'apellido'=>"S",
         ]);
+    }
+    
+    public function testShowDetalle(){
+
+        $alumno = factory(Alumno::class)->create();
+        $salon = $alumno->salon;
+
+        $response = $this->get("/alumnos/{$alumno->id}");
+        $response->assertStatus(200)
+            ->assertSee($alumno->nombre)
+            ->assertSee($salon->grado->nombre)
+            ->assertSee($salon->seccion)
+            ->assertSee($alumno->gmail);      
+    }
+
+    public function testSearchPorApellidosYNombres(){
+
+        $alumno = factory(Alumno::class)->create();
+
+        $response = $this->get("/alumnos/search?buscar={$alumno->nombre}");
+        $response->assertStatus(200)
+            ->assertSee($alumno->nombre);
+    }
+
+    public function testSearchPorApellidosYNombresSinResultados(){
+
+        
+        $buscar = "dasd";
+        $response = $this->get("/alumnos/search?buscar={$buscar}");
+        $response->assertStatus(200)
+        ->assertSee('No se obtuvieron resultados');
     }
     
 

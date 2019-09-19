@@ -6,7 +6,7 @@
       <ul>
       <li><a href="{{url("/alumnos")}}">Listado de Alumnos</a></li>
       <li><a href="{{url("/alumnos/create")}}">Crear Alumno</a></li>
-          <li><a href="">Buscar Alumno</a></li>
+      <li><a href="{{url("/alumnos/search")}}">Buscar Alumno</a></li>
             
       </ul>
 
