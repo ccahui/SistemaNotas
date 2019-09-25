@@ -125,7 +125,9 @@ class AlumnoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Alumno::destroy($id);
+        return redirect("/alumnos");
+
     }
     public function search(Request $request){
         $buscar = $request->query('buscar');

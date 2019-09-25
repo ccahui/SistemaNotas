@@ -126,11 +126,22 @@ class AlumnoTest extends TestCase
 
     public function testSearchPorApellidosYNombresSinResultados(){
 
-        
         $buscar = "dasd";
         $response = $this->get("/alumnos/search?buscar={$buscar}");
         $response->assertStatus(200)
         ->assertSee('No se obtuvieron resultados');
+    }
+
+    public function testDestroyEliminarAlumno(){
+        
+        
+        $alumno = factory(Alumno::class)->create(); 
+        $response = $this->delete("/alumnos/$alumno->id");
+        $response->assertRedirect("/alumnos");
+
+        $this->assertDatabaseMissing('alumnos',[
+            'id'=>$alumno->id
+        ]);
     }
     
 

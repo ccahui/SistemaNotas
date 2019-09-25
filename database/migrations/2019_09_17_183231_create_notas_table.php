@@ -23,7 +23,8 @@ class CreateNotasTable extends Migration
             
             $table->unsignedBigInteger('alumno_id');
             $table->foreign('alumno_id')
-                ->references('id')->on('alumnos');
+                ->references('id')->on('alumnos')
+                ->onDelete('cascade');;
 
             $table->integer('notas1')->nullable();
             $table->integer('notas2')->nullable();

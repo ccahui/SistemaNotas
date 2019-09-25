@@ -18,7 +18,13 @@
                 <a href="{{ url("/alumnos/{$alumno->id}") }}" class="btn-small "><i class="material-icons">remove_red_eye</i></a>
                 <a href="{{ url("/alumnos/{$alumno->id}/edit") }}" class="btn-small blue"><i class="material-icons">edit</i></a>
 
-                <a href="" class="btn-small red"><i class="material-icons">delete</i></a>
+                
+            <form method="post" action="{{ url("/alumnos/{$alumno->id}")}}" style="display:inline-block">
+                @csrf
+                {{ method_field("DELETE")}}
+                <button type="submit" value="Eliminar" class="btn-small red" onclick="return confirm('Estas Seguro de eliminar?')"><i class="material-icons" >delete</i></button>
+            </form>
+            
             </td>
         </tr>
         @empty
