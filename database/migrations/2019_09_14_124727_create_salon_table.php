@@ -22,6 +22,8 @@ class CreateSalonTable extends Migration
                 ->references('id')->on('grados')
                 ->onDelete('cascade');
             
+            $table->unique(['grado_id', 'seccion']);
+
             $table->timestamps();
         });
     }

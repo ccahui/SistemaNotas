@@ -35,9 +35,8 @@
       <i class="material-icons circle red">play_arrow</i>
       <span class="title">Salon</span>
       <ul>
-            <li><a href="">Listado de Salon</a></li>
-            <li><a href="">Crear Salon</a></li>
-            <li><a href="">Buscar Salon</a></li>
+            <li><a href="{{url("/salones")}}">Listado de Salon</a></li>
+            <li><a href="{{url("/salones/create")}}">Crear Salon</a></li>
         </ul>
     </li>
   </ul>

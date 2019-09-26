@@ -16,7 +16,7 @@
           @endforeach
           
       </select>
-      <label>Grado - Sección</label>
+      <label>Grado </label>
     
     
     </div>

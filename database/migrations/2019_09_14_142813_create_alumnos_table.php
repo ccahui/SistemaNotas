@@ -21,7 +21,8 @@ class CreateAlumnosTable extends Migration
 
             $table->unsignedBigInteger('salon_id');
             $table->foreign('salon_id')
-                ->references('id')->on('salones');
+                ->references('id')->on('salones')
+                ->onDelete('cascade');
             
             $table->timestamps();
         });

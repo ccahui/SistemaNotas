@@ -23,5 +23,6 @@ Route::get('/cursos/search','CursoController@search');
 Route::resource('alumnos', 'AlumnoController');
 Route::resource('profesores', 'ProfesorController');
 Route::resource('cursos', 'CursoController');
+Route::resource('salones', 'SalonController');
 
 
