@@ -8,7 +8,7 @@ class Profesor extends Model
 {
     protected $table = 'profesores';
     protected $fillable = [
-        'nombre', 'apellido','especialidad'
+        'nombre', 'apellido','gmail'
     ];
     /** TODO */
     public function cursos(){

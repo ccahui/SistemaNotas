@@ -15,9 +15,9 @@
       <i class="material-icons circle">folder</i>
       <span class="title">Profesor</span>
       <ul>
-            <li><a href="">Listado de Profesor</a></li>
-            <li><a href="">Crear Profesor</a></li>
-            <li><a href="">Buscar Profesor</a></li>
+            <li><a href="{{url("/profesores")}}">Listado de Profesor</a></li>
+            <li><a href="{{url("/profesores/create")}}">Crear Profesor</a></li>
+            <li><a href="{{url("/profesores/search")}}">Buscar Profesor</a></li>
               
         </ul>
     </li>

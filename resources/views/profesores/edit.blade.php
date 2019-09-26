@@ -18,19 +18,19 @@
 
 
 <div class="row">
-<form class="col s12" method="post" action="{{ url("/alumnos/$alumno->id")}}">
+<form class="col s12" method="post" action="{{ url("/profesores/$profesor->id")}}">
   {{ method_field('PUT')}}
   {{ csrf_field() }}
    
-  @include('alumnos/fieldsEdit')
+  @include('profesores/fieldsEdit')
 
     
     <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
         <i class="material-icons right">send</i>
       </button>
     
-    
-      <a href="{{url("/alumnos")}}" class="btn">Cancelar</a>
+
+      <a href="{{url("/profesores")}}" class="btn">Cancelar</a>
       
       
     </form>

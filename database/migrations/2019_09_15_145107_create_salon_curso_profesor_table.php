@@ -26,7 +26,8 @@ class CreateSalonCursoProfesorTable extends Migration
             
             $table->unsignedBigInteger('profesor_id')->nullable();
             $table->foreign('profesor_id')
-                ->references('id')->on('profesores');
+                ->references('id')->on('profesores')
+                ->onDelete('set null');
 
             $table->unique(['salon_id', 'curso_id']);
 

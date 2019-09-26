@@ -21,7 +21,7 @@
 </div>
 @if ($buscar)
     <h6>Resultados Obtenidos: </h6>
-    @include('alumnos/table')
+    @include('profesores/table')
 @endif  
 @endsection
     

@@ -28,7 +28,7 @@
         <i class="material-icons right">send</i>
       </button>
     
-    <button class="btn">Cancelar</button> 
+    <a href="{{url("/alumnos")}}" class="btn">Cancelar</a>
       
     </form>
   </div>
