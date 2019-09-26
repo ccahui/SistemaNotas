@@ -25,9 +25,9 @@
       <i class="material-icons circle green">insert_chart</i>
       <span class="title">Curso</span>
       <ul>
-            <li><a href="">Listado de Curso</a></li>
-            <li><a href="">Crear Curso</a></li>
-            <li><a href="">Buscar Curso</a></li>
+            <li><a href="{{url("/cursos")}}">Listado de Curso</a></li>
+            <li><a href="{{url("/cursos/create")}}">Crear Curso</a></li>
+            <li><a href="{{url("/cursos/search")}}">Buscar Curso</a></li>
               
         </ul>
     </li>

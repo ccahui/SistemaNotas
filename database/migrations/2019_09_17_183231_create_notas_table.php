@@ -19,12 +19,13 @@ class CreateNotasTable extends Migration
             
             $table->unsignedBigInteger('curso_id');
             $table->foreign('curso_id')
-                ->references('id')->on('cursos');
-            
+                ->references('id')->on('cursos')
+                ->onDelete('cascade');
+
             $table->unsignedBigInteger('alumno_id');
             $table->foreign('alumno_id')
                 ->references('id')->on('alumnos')
-                ->onDelete('cascade');;
+                ->onDelete('cascade');
 
             $table->integer('notas1')->nullable();
             $table->integer('notas2')->nullable();

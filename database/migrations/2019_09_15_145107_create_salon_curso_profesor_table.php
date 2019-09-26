@@ -22,7 +22,8 @@ class CreateSalonCursoProfesorTable extends Migration
             
             $table->unsignedBigInteger('curso_id');
             $table->foreign('curso_id')
-                ->references('id')->on('cursos');
+                ->references('id')->on('cursos')
+                ->onDelete('cascade');
             
             $table->unsignedBigInteger('profesor_id')->nullable();
             $table->foreign('profesor_id')
