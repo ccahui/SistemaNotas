@@ -19,6 +19,7 @@ Route::get('/alumnos/search','AlumnoController@search');
 Route::get('/profesores/search','ProfesorController@search');
 Route::get('/cursos/search','CursoController@search');
 
+Route::get('/notas/{id}','NotasController@show');
 
 Route::resource('alumnos', 'AlumnoController');
 Route::resource('profesores', 'ProfesorController');
