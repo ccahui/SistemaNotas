@@ -4,7 +4,19 @@ footer {
     bottom: 0;
     width: 100%;
 }
+.font-weight-bold{
+    font-weight: bold !important;
+}
 
+.mx-1{
+    margin-left: .25rem !important;
+    margin-right: .25rem !important;
+}
+
+.mx-2{
+    margin-left: .50rem !important;
+    margin-right: .50rem !important;
+}
 .ml-1 {
     margin-left: .25rem !important
 }
