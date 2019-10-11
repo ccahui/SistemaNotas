@@ -14,7 +14,7 @@ class ProfesorTablaSeeder extends Seeder
     {
         $this -> insertarProfesores(10);
     }
-
+    
     private function insertarProfesores($cantidad) {
         factory(Profesor::class, $cantidad)->create();
     }

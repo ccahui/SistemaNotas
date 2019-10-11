@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login','AuthGoogle\LoginController@login');
+Route::get('/login/callback','AuthGoogle\LoginController@callback');
+Route::get('/logout','AuthGoogle\LoginController@logout');
 
 Route::get('/alumnos/search','AlumnoController@search');
 Route::get('/profesores/search','ProfesorController@search');
