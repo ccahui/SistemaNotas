@@ -19,9 +19,9 @@ Route::get('/login','AuthGoogle\LoginController@login');
 Route::get('/login/callback','AuthGoogle\LoginController@callback');
 Route::get('/logout','AuthGoogle\LoginController@logout');
 
-Route::get('/alumnos/search','AlumnoController@search');
-Route::get('/profesores/search','ProfesorController@search');
-Route::get('/cursos/search','CursoController@search');
+Route::get('/alumnos/search','AlumnoController@search')->middleware('admin');;
+Route::get('/profesores/search','ProfesorController@search')->middleware('admin');;
+Route::get('/cursos/search','CursoController@search')->middleware('admin');;
 
 
 /*GESTION DE NOTAS */
@@ -30,9 +30,9 @@ Route::get('/notas/profesor/{id}','NotasController@showNotasProfesor');
 Route::get('/notas/profesor/{id}/detalle','NotasController@showNotasProfesorDetalle');
 
 /* CRUDs */
-Route::resource('alumnos', 'AlumnoController');
-Route::resource('profesores', 'ProfesorController');
-Route::resource('cursos', 'CursoController');
-Route::resource('salones', 'SalonController');
+Route::resource('alumnos', 'AlumnoController')->middleware('admin');
+Route::resource('profesores', 'ProfesorController')->middleware('admin');
+Route::resource('cursos', 'CursoController')->middleware('admin');
+Route::resource('salones', 'SalonController')->middleware('admin');
 
 
