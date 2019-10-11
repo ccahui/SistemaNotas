@@ -19,4 +19,8 @@ class Profesor extends Model
         return $this->belongsToMany(Salon::class,'salon_curso_profesor','profesor_id','salon_id')->withPivot('curso_id');
     }
 
+    public static function findByEmail($email){
+        return static::where('gmail',$email)->first();
+    }
+
 }

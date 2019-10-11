@@ -24,6 +24,9 @@ class Alumno extends Model
         return $this->belongsToMany(Curso::class,'notas')->using(Nota::class)->withPivot('id','notas1','notas2','notas3');
     }
     
+    public static function findByEmail($email){
+        return static::where('gmail',$email)->first();
+    }
 
 
 }

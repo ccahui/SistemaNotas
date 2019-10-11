@@ -15,14 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/alumnos/search','AlumnoController@search');
 Route::get('/profesores/search','ProfesorController@search');
 Route::get('/cursos/search','CursoController@search');
 
+
+/*GESTION DE NOTAS */
 Route::get('/notas/alumno/{id}','NotasController@show');
 Route::get('/notas/profesor/{id}','NotasController@showNotasProfesor');
 Route::get('/notas/profesor/{id}/detalle','NotasController@showNotasProfesorDetalle');
 
+/* CRUDs */
 Route::resource('alumnos', 'AlumnoController');
 Route::resource('profesores', 'ProfesorController');
 Route::resource('cursos', 'CursoController');
