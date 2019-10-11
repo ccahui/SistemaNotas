@@ -18,7 +18,7 @@ class NotasTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function testVisualizarNota()
     {
         $alumno = factory(Alumno::class)->create(); // Factory creo un Salon Un Grado
         $curso = factory(Curso::class)->create(); // Creo un curso de el unico grado que hay actualmente
@@ -32,7 +32,7 @@ class NotasTest extends TestCase
         
         $nota = $this->obtenerNotas($alumno, $curso);
 
-        $response = $this->get("/notas/{$alumno->id}");
+        $response = $this->get("/notas/alumno/{$alumno->id}");
         $response->assertStatus(200)
             ->assertSee($grado->nombre)
             ->assertSee($alumno->apellido)
