@@ -17,6 +17,7 @@ class AlumnoController extends Controller
     public function index()
     {
         $alumnos = Alumno::all();
+        
         $data = [
             'alumnos'=>$alumnos,
             'titulo'=>'Listado de Alumnos',

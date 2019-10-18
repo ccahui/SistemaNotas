@@ -11,10 +11,12 @@
         /*
         1 Responsive Celular
         2 Form Selected 
+        3 Dropdown
         */
         $(document).ready(function(){
           $('.sidenav').sidenav(); 
           $('select').formSelect();
+          $(".dropdown-trigger").dropdown();
         });      
         </script>
   </body>

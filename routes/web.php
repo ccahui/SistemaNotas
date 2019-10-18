@@ -30,7 +30,7 @@ Route::get('/notas/profesor/{id}','NotasController@showNotasProfesor');
 Route::get('/notas/profesor/{id}/detalle','NotasController@showNotasProfesorDetalle');
 
 /* CRUDs */
-Route::resource('alumnos', 'AlumnoController')->middleware('admin');
+Route::resource('alumnos', 'AlumnoController');
 Route::resource('profesores', 'ProfesorController')->middleware('admin');
 Route::resource('cursos', 'CursoController')->middleware('admin');
 Route::resource('salones', 'SalonController')->middleware('admin');

@@ -4,13 +4,12 @@
 
 @section('content')
 
-<h5>{{$titulo}}</h5>    
-
-
-<div class="row">
-        <div>
-                <span class="font-weight-bold">Apellidos y Nombres: </span> {{$profesor->apellido}} {{$profesor->nombre}}
-        </div>
+    
+<div class="row card-panel">
+    <span class="font-weight-bold">REGISTRAR NOTAS</span>
+    <p>       <span class="font-weight-bold">Docente: </span> {{$profesor->apellido}} {{$profesor->nombre}}</p>
+         
+       
 <div>
 
     <div class="row">
@@ -18,8 +17,8 @@
                 <table>
                         <thead>
                           <tr>
-                              <th>Curso</th>
-                              <th>Salones</th>
+                              <th>Mis Cursos</th>
+                              <th>Secciones</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -53,10 +52,6 @@
 
 
 
-
-<br>
-
-<a href="{{url("/cursos")}}" class="btn"><i class='material-icons left'>arrow_back</i>Regresar</a>
 </div>
 @endsection
     

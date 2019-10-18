@@ -1,4 +1,4 @@
-@include('componentes/header')
+@include('componentes/headerProfesor')
 
 
     <div class="container">
