@@ -22,19 +22,26 @@
       </div>
 
       <div class="right-align">
-                <a class="dropdown-trigger btn" href="#!" data-target="dropdownExcel">Hoja Excel<i class="material-icons right">arrow_drop_down</i></a>
-                  
-                <!-- Dropdown Structure -->
-                  <ul id="dropdownExcel" class="dropdown-content">
+
+               
+        <a class="btn modal-trigger" href="#modal1">Enviar Comunicado</a>
+        <a class="dropdown-trigger btn red blue" href="#!" data-target="dropdownExcel">Hoja Excel<i class="material-icons right">arrow_drop_down</i></a>
+        <!-- Dropdown Structure -->
+        <ul id="dropdownExcel" class="dropdown-content">
                                 
-                        <li><a href="{{url("/cursos")}}"><i class="material-icons left">cloud_download</i> Exportar</a></li>
+                        <li><a href="{{url("/cursos")}}" class="blue-text"><i class="material-icons left">cloud_download</i> Exportar</a></li>
                         <li class="divider" tabindex="-1"></li>
-                        <li><a href="{{url("/cursos")}}"><i class="material-icons left">cloud_upload</i> Importar</a></li>      
+                        <li><a href="{{url("/cursos")}}" class="blue-text"><i class="material-icons left">cloud_upload</i> Importar</a></li>      
                                 
                         
                 </ul>  
-               
-        </div>
+         <!-- Modal Estructura-->       
+        @include('notas/modalComunicado')
+
+       
+                  
+                
+
 
 
 <div>

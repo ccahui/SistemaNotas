@@ -23,15 +23,11 @@
                 <div class="navbar-fixed">
                 <nav class="nav-wrapper indigo">
                   <div class="container">
-                  <a href="{{url('/')}}" class="brand-logo">Sistema Notas</a>
+                    <a href="{{url('/')}}" class="brand-logo">Sistema Notas</a>
                     <a href="#" class="sidenav-trigger" data-target="mobile-links">
                       <i class="material-icons">menu</i>
                     </a>
                     <ul class="right hide-on-med-and-down">
-                    <li><a href="{{url('/alumnos')}}">Alumnos</a></li>
-                      <li><a href="{{url('/profesores')}}">Profesores</a></li>
-                      <li><a href="{{url('/cursos')}}">Cursos</a></li>
-                      <li><a href="{{url('/salones')}}">Salones</a></li>
                       
                       @auth
                     <li><a class="dropdown-trigger btn white indigo-text" href="#!" data-target="dropdown1">{{Auth::user()->email}}<i class="material-icons right">arrow_drop_down</i></a></li>

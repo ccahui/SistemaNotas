@@ -23,7 +23,7 @@
                 <div class="navbar-fixed">
                 <nav class="nav-wrapper indigo">
                   <div class="container">
-                    <a href="#" class="brand-logo">Sistema Notas</a>
+                    <a href="{{url('/')}}" class="brand-logo">Sistema Notas</a>
                     <a href="#" class="sidenav-trigger" data-target="mobile-links">
                       <i class="material-icons">menu</i>
                     </a>

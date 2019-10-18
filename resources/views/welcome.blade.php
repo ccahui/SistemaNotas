@@ -77,20 +77,20 @@
             </div>
 
         <div class="content mt">
-        <a href="{{url('/login')}}" class="">
+        <a href="{{url('/notas/alumno/1')}}" class="">
                         <div style="display: inline-block">
                                 <i class="material-icons large mx">account_circle</i>
                                 <span style="display: block">Alumno</span>
                         </div>
                     
                 </a>
-            <a href="{{url('/login')}}" >
+            <a href="{{url('/notas/profesor/1')}}" >
                         <div style="display: inline-block">
                                 <i class="material-icons large mx">people</i>
                                 <span style="display: block">Profesor</span>
                         </div>
                 </a>
-                <a href="{{url('/login')}}">
+                <a href="{{url('/alumnos')}}">
                         <div style="display: inline-block">
                                 <i class="material-icons large mx">supervised_user_circle</i>
                                 <span style="display: block">Admin</span>

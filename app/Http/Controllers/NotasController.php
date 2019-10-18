@@ -29,7 +29,7 @@ class NotasController extends Controller
     public function showNotasProfesor($id){
        
         $profesor = Profesor::findOrFail($id);
-        $cursosSalones = $this-> obtenerSalonesPorCadaCurso();
+        $cursosSalones = $this-> obtenerSalonesQueDicto($profesor);
         $data = [
             'titulo' => 'Registro de Notas',
             'profesor' => $profesor,
@@ -64,9 +64,9 @@ class NotasController extends Controller
     }
 
 
-    public function obtenerSalonesPorCadaCurso(){
+    public function obtenerSalonesQueDicto($profesor){
 
-        $profesor = Profesor::all()->first();
+        // $profesor = Profesor::all()->first();
         $cursos_unicos = $profesor->cursos->unique();
         $arrayes = array();
         foreach($cursos_unicos as $curso){
@@ -79,6 +79,7 @@ class NotasController extends Controller
         }
         return $arrayes;
 }
+
 public function obtenerAlumnosDeUnSalonYUnCurso($curso, $salon){
     
     $alumnos = $curso->alumnos()->where('salon_id',$salon->id)->get();

@@ -31,7 +31,7 @@
                             <td>
                                     @foreach ($cursoSalones['salones'] as $salon)            
                                     <span class="ml-1">
-                                    <a href="{{url("/notas/profesor/$profesor->id/detalle?curso={$cursoSalones['curso']->id}&salon={$salon->id}")}}" class="btn">{{$salon->seccion}}</a>     
+                                    <a href="{{url("/notas/profesor/$profesor->id/detalle?curso={$cursoSalones['curso']->id}&salon={$salon->id}")}}" class="btn blue">{{$salon->seccion}}</a>     
                                     </span>  
                                     @endforeach
                             </td>
