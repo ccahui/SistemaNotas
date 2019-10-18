@@ -14,12 +14,26 @@
         3 Dropdown
         4 Modal
         */
+     
+        function isNumber(event){
+          return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57
+        }
+
+        function validarNota(value){
+          if (parseInt(value) > 20){
+            return 20;
+          }
+           return value;
+        }
+        
         $(document).ready(function(){
           $('.sidenav').sidenav(); 
           $('select').formSelect();
           $(".dropdown-trigger").dropdown();
           $('.modal').modal();
         });      
+
+     
         </script>
   </body>
   </html>

@@ -45,30 +45,16 @@
 
 
 <div>
-    
-                <table>
-                        <thead>
-                          <tr>
-                              <th>Alumnos</th>
-                              <th>Nota 1 </th>
-                              <th>Nota 2 </th>
-                              <th>Nota 3 </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          @foreach ($alumnos as $alumno)
-                          <tr>
-                          <td>{{$alumno->apellido}} {{$alumno->nombre}}</td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          </tr>
-                          @endforeach  
-
-                     
-                    </tbody>
-                </table>
-        
+        <form action="">
+        {{ csrf_field() }}
+                @include('notas/tableInsertarNotas')
+                <br>
+                <div class="center-align fluid">
+                        <button type="submit" class="btn blue" style="width: 100%">Guardar</button> 
+                </div>  
+        </form>
+              
+              
        
                     
     
