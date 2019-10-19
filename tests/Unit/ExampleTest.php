@@ -24,19 +24,23 @@ class ExampleTest extends TestCase
             Curso
         */
 
-        //$this->obtenerAlumnosDeUnSalonYUnCurso();
+     //   $this->obtenerAlumnosDeUnSalonYUnCurso();
         $this->assertTrue(true);
     }
-    public function obtenerAlumnosDeUnSalonYUnCurso(){
-        $curso = Curso::all()->first();
-        $salon = 3;
-        /*
-            Salon
-            Curso
-        */
-        $salon_de_un_curso = $curso->alumnos()->where('salon_id',3)->get();
 
-        dd($salon_de_un_curso);
+
+    public function obtenerAlumnosDeUnSalonYUnCurso(){
+       $curso = Curso::all()->first();
+        $salon = $curso->salones()->first()->id;
+
+      /*      Salon
+            Curso*/
+        
+       $salon_de_un_curso = $curso->alumnos()->where('salon_id',$salon)->get();
+        foreach($salon_de_un_curso as $alumno){
+                dd($alumno->pivot->notas1);
+
+        }
     }
 
     public function obtenerSalonesPorCadaCurso(){
