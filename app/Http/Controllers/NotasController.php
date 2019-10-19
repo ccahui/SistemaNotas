@@ -9,6 +9,7 @@ use App\Models\Alumno;
 use App\Models\Profesor;
 use App\Models\Curso;
 use App\Models\Salon;
+use App\Models\Nota;
 
 class NotasController extends Controller
 {
@@ -63,6 +64,24 @@ class NotasController extends Controller
         return view('notas/showNotasProfesorDetalle',$data);
     }
 
+    public function storeNotas(Request $request){
+        $notas1 = $request->input('notas1');
+        $notas2 = $request->input('notas2');
+        $notas3 = $request->input('notas3');
+
+        $notas_ids = $request->input('notas_ids');
+
+        for($i = 0; $i < count($notas1) ; $i++){
+            Nota::where('id',$notas_ids[$i])->update(
+               ['notas1'=>$notas1[$i],
+               'notas2'=>$notas2[$i],
+               'notas3'=>$notas3[$i]]);
+        }
+        $url = redirect()->getUrlGenerator()->previous();
+        
+        return redirect($url);
+
+    }
 
     public function obtenerSalonesQueDicto($profesor){
 

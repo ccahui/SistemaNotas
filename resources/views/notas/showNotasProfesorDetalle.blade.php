@@ -45,7 +45,8 @@
 
 
 <div>
-        <form action="">
+<form action="{{url('/notas')}}" method="post"> 
+        {{ method_field('PUT')}}
         {{ csrf_field() }}
                 @include('notas/tableInsertarNotas')
                 <br>

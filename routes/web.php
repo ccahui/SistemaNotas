@@ -28,6 +28,8 @@ Route::get('/cursos/search','CursoController@search');
 Route::get('/notas/alumno/{id}','NotasController@show');
 Route::get('/notas/profesor/{id}','NotasController@showNotasProfesor');
 Route::get('/notas/profesor/{id}/detalle','NotasController@showNotasProfesorDetalle');
+Route::put('/notas','NotasController@storeNotas');
+
 
 /* CRUDs */
 Route::resource('alumnos', 'AlumnoController');
