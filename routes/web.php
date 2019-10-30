@@ -15,8 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/* PARA EXPORT EXCEL*/
+/* PARA EXPORT e importar EXCEL*/
 Route::get('/exportarNotas/profesor/{id}','ExportNotasController@exportNotasExcel');
+Route::post('/importarNotas/profesor/{id}','ImportController@notas');
 
 
 Route::get('/login','AuthGoogle\LoginController@login');

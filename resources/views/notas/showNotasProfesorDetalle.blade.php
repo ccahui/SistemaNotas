@@ -43,8 +43,18 @@
                 
 
 
-
+      
 <div>
+
+<form action={{url("/importarNotas/profesor/$profesor->id")}} method="post" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <input type="file" name ="notas" accept=".xls, .xlsx">
+        <input type="submit">
+
+</form>
+                     
+
+                
 <form action="{{url('/notas')}}" method="post"> 
         {{ method_field('PUT')}}
         {{ csrf_field() }}
