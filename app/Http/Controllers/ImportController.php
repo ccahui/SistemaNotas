@@ -14,7 +14,13 @@ class ImportController extends Controller
         if($request->file('notas')->isValid()){
             $fileNotas = $request->file('notas');
 
+            
             Excel::import(new NotasImport, $fileNotas);
+            
+            $url = redirect()->getUrlGenerator()->previous();
+        
+        return redirect($url);
+        
         } else {
             dd("UPS LO SENTIMOS ERROR");
         }

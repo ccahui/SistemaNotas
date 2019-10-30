@@ -7,6 +7,8 @@ use App\Models\Curso;
 use Illuminate\Http\Request;
 use App\Models\Profesor;
 use App\Models\Salon;
+/*FORMULAS */
+use Maatwebsite\Excel\Concerns\WithCalculatedFormulas;
 
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -20,8 +22,8 @@ class ExportNotasController extends Controller
         
 
         $profesor = Profesor::findOrFail($id);
-        $curso = Curso::findOrFail($id);
-        $salon = Salon::findOrFail($id);
+        $curso = Curso::findOrFail($idCurso);
+        $salon = Salon::findOrFail($idSalon);
         $alumnos = $this-> obtenerAlumnosDeUnSalonYUnCurso($curso, $salon);
         $exportarnotas = new UserExport($profesor,$alumnos,$salon,$curso);
 
