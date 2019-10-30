@@ -29,7 +29,7 @@
         <!-- Dropdown Structure -->
         <ul id="dropdownExcel" class="dropdown-content">
                                 
-                        <li><a href="{{url("/cursos")}}" class="blue-text"><i class="material-icons left">cloud_download</i> Exportar</a></li>
+                        <li><a href="{{url("/exportarNotas/profesor/{$profesor->id}?curso={$curso->id}&salon={$salon->id}")}}" class="blue-text"><i class="material-icons left">cloud_download</i> Exportar</a></li>
                         <li class="divider" tabindex="-1"></li>
                         <li><a href="{{url("/cursos")}}" class="blue-text"><i class="material-icons left">cloud_upload</i> Importar</a></li>      
                                 

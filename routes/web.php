@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/* PARA EXPORT EXCEL*/
+Route::get('/exportarNotas/profesor/{id}','ExportNotasController@exportNotasExcel');
+
+
 Route::get('/login','AuthGoogle\LoginController@login');
 Route::get('/login/callback','AuthGoogle\LoginController@callback');
 Route::get('/logout','AuthGoogle\LoginController@logout');
