@@ -2,15 +2,21 @@
 
 namespace App\Exports;
 
+use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Alumno;
 use App\Models\Profesor;
 use Maatwebsite\Excel\Concerns\FromCollection;
-
+use Maatwebsite\Excel\Concerns\Exportable;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
+use Illuminate\Contracts\Support\Responsable;
+class UserExport implements FromView, Responsable
 
-class UserExport implements FromView
 {
+
+    use Exportable;
+
+    private $fileName = 'notas.xlsx';
     private $profesor;
     private $alumnos;
     private $salon;
@@ -21,7 +27,11 @@ class UserExport implements FromView
         $this->alumnos = $alumnos;
         $this->salon = $salon;
         $this->curso = $curso;
-        //dd('hola mundo');
+        $this->definirNombreDelArchivo();
+    }
+
+    private function definirNombreDelArchivo(){
+        $this->fileName = $this->curso->nombre."_".$this->salon->grado->id."-".$this->salon->seccion.".xlsx";
     }
 
     public function view(): View

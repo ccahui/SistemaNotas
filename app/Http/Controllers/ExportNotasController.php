@@ -27,7 +27,8 @@ class ExportNotasController extends Controller
         $alumnos = $this-> obtenerAlumnosDeUnSalonYUnCurso($curso, $salon);
         $exportarnotas = new UserExport($profesor,$alumnos,$salon,$curso);
 
-        return Excel::download($exportarnotas,'notas.xlsx');;
+        return $exportarnotas;
+    
     }
 
     public function obtenerAlumnosDeUnSalonYUnCurso($curso, $salon){
