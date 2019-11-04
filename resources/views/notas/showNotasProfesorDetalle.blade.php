@@ -21,20 +21,39 @@
       </p>
       </div>
 
-      <div class="right-align">
+      <div class="right-align row card-panel">
 
-               
-        <a class="btn modal-trigger" href="#modal1">Enviar Comunicado</a>
-        <a class="dropdown-trigger btn red blue" href="#!" data-target="dropdownExcel">Hoja Excel<i class="material-icons right">arrow_drop_down</i></a>
-        <!-- Dropdown Structure -->
-        <ul id="dropdownExcel" class="dropdown-content">
+                <a href="{{url("/exportarNotas/profesor/{$profesor->id}?curso={$curso->id}&salon={$salon->id}")}}" class="btn"><i class="material-icons left">cloud_download</i> Exportar Excel</a>
+             
+                <a class="btn modal-trigger red blue" href="#modal1">Enviar Comunicado</a>
+                
+        <div  class="col 6 " style="display: inline-block">
+                
+                
+                <form action={{url("/importarNotas/profesor/$profesor->id")}} method="post" enctype="multipart/form-data">
+                                {{ csrf_field() }}
                                 
-                        <li><a href="{{url("/exportarNotas/profesor/{$profesor->id}?curso={$curso->id}&salon={$salon->id}")}}" class="blue-text"><i class="material-icons left">cloud_download</i> Exportar</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="{{url("/cursos")}}" class="blue-text"><i class="material-icons left">cloud_upload</i> Importar</a></li>      
-                                
-                        
-                </ul>  
+                                        <div class="file-field input-field">
+                                                <div class="btn">
+                                                  <span>Importar Excel<i class="material-icons left">cloud_upload</i></span>
+                                                  <input type="file" name="notas" accept=".xls, .xlsx">
+                                                </div>
+                                                <div class="file-path-wrapper">
+                                                  <input class="file-path validate" type="text">
+                                                  
+                                                </div>
+
+                                        </div>
+                                              <input type="submit" >
+                                             
+                                        </form>
+                
+        </div>
+        
+      
+        
+        
+        
          <!-- Modal Estructura-->       
         @include('notas/modalComunicado')
 
@@ -43,15 +62,13 @@
                 
 
 
+
+
+       
       
 <div>
 
-<form action={{url("/importarNotas/profesor/$profesor->id")}} method="post" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        <input type="file" name ="notas" accept=".xls, .xlsx">
-        <input type="submit">
 
-</form>
                      
 
                 
