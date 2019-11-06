@@ -7,10 +7,12 @@
                         <div class="row">
                             <h5>Comunicado</h5>
 
-                            <form action="">
+                            <form method="post" action="{{url("/profesores/enviarcomunicado")}}" >
+                              {{ csrf_field() }}
                                     <div class="input-field col s12">
                             
                                             <input name="asunto" type="text">
+                                            <input name="idsalon" hidden type="text" value="{{$salon->id}}">
                                               <label for="asunto">Asunto</label>
                                               
                                             </div>
@@ -18,7 +20,7 @@
                                         
                                           <div class="row">
                                             <div class="input-field col s12">
-                                              <textarea class="materialize-textarea" placeholder="Contenido"  name="gmail"></textarea>
+                                              <textarea class="materialize-textarea" placeholder="Contenido"  name="contenido"></textarea>
                                                 <label>Contenido</label>
                                               </div>
                                           </div>    
