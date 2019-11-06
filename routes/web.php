@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*enviar comunicado*/
+Route::post('/profesores/enviarcomunicado','ProfesorController@enviarComunicado');
+
 Route::get('/login','AuthGoogle\LoginController@login');
 Route::get('/login/callback','AuthGoogle\LoginController@callback');
 Route::get('/logout','AuthGoogle\LoginController@logout');
@@ -36,5 +39,3 @@ Route::resource('alumnos', 'AlumnoController');
 Route::resource('profesores', 'ProfesorController');
 Route::resource('cursos', 'CursoController');
 Route::resource('salones', 'SalonController');
-
-
