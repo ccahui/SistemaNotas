@@ -152,7 +152,7 @@ class ProfesorController extends Controller
             $aprueba = $a->gmail;
             $data = array('name' =>$contenido,);
 
-            \Mail::queue('emails.pruebaec', $data, function($message) use ($asunto, $aprueba){
+            \Mail::send('emails.pruebaec', $data, function($message) use ($asunto, $aprueba){
                 $message->from('Colegio@gmail.com', 'Leer todo el comunicado');
                 $message->to($aprueba)->subject($asunto);
             });
