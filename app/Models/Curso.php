@@ -31,6 +31,7 @@ class Curso extends Model
 
     
     
+    
 
 
 }
