@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Profesor;
+use App\Models\Grado;
 use App\Models\Salon;
+
 class ProfesorController extends Controller
 {
     /**
@@ -140,6 +142,24 @@ class ProfesorController extends Controller
         return view('profesores/search',$data);
     }
 
+    public function asignarCurso(){
+        $profesores = Profesor::all();
+        $data = [
+            'profesores'=>$profesores,
+            'titulo'=>'Asignar Curso Profesor',
+        ];
+        return view('profesoresAsignar/index',$data);
+    }
+    public function asignarDetalle(Request $request, $id){
+       $grados = Grado::all();
+      
+       $data = [
+           "grados"=>$grados,
+           "titulo"=>"Asignar Profesor"
+       ];
+       
+     return view('profesoresAsignar/detalle',$data);
+    }
     public function enviarComunicado(Request $request){
         
         set_time_limit(300);

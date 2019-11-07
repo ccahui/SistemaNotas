@@ -18,6 +18,7 @@
             <li><a href="{{url("/profesores")}}">Profesores</a></li>
             <li><a href="{{url("/profesores/create")}}">Crear Profesor</a></li>
             <li><a href="{{url("/profesores/search")}}">Buscar Profesor</a></li>
+            <li><a href="{{url("/profesores/asignarCurso")}}">Asignar Curso</a></li>
               
         </ul>
     </li>
