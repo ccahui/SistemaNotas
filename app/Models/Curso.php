@@ -17,7 +17,7 @@ class Curso extends Model
     }
     
     public function salones(){
-        return $this->belongsToMany(Salon::class,'salon_curso_profesor','curso_id','salon_id')->withPivot('profesor_id');
+        return $this->belongsToMany(Salon::class,'salon_curso_profesor')->using(Malla::class)->withPivot('id','profesor_id');
     }
 
     public function alumnos(){

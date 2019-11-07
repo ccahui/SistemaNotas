@@ -19,6 +19,9 @@ Route::get('/', function () {
 /*ASIGNAR CURSO PROFESOR */
 Route::get('/profesores/asignarCurso','ProfesorController@asignarCurso');
 Route::get('/profesores/asignarCurso/{id}','ProfesorController@asignarDetalle');
+Route::post('/profesores/asignarCurso','ProfesorController@storeAsignarCurso');
+
+
 
 /* PARA EXPORT e importar EXCEL*/
 Route::get('/exportarNotas/profesor/{id}','ExportNotasController@exportNotasExcel');

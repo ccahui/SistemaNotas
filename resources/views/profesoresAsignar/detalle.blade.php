@@ -17,8 +17,11 @@
 </div>
 <div>
 
-  <form action="" method="get">
-  <div class="row">
+  <form action="{{url("/profesores/asignarCurso")}}" method="post">
+      {{ csrf_field() }}
+      <input name="profesor_id" hidden type="text" value="{{$profesor->id}}">
+
+      <div class="row">
     @foreach ($grados as $grado)
     <div id="{{$grado->id}}" class="col ">
       <table>
@@ -37,7 +40,7 @@
 
 
             <label class="mx-2">
-            <input type="checkbox" name="ids[]" value="{{$salon->pivot->id}}" class="filled-in" />
+            <input type="checkbox" name="malla_ids[]"  value="{{$salon->pivot->id}}" class="filled-in" />
               <span>{{$salon->seccion}}</span>
             </label>
 

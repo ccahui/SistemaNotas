@@ -8,6 +8,8 @@
                             <h5>Comunicado</h5>
 
                             <form method="post" action="{{url("/profesores/enviarcomunicado")}}" >
+                             
+                             
                               {{ csrf_field() }}
                                     <div class="input-field col s12">
                             

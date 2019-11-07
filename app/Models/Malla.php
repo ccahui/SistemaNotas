@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class Malla extends Model
+class Malla extends Pivot
 {
     public $incrementing = true;
     protected $table = "salon_curso_profesor";

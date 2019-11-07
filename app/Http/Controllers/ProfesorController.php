@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Profesor;
 use App\Models\Grado;
 use App\Models\Salon;
+use App\Models\Malla;
 
 class ProfesorController extends Controller
 {
@@ -152,14 +153,29 @@ class ProfesorController extends Controller
     }
     public function asignarDetalle(Request $request, $id){
        $grados = Grado::all();
-      
+        $profesor = Profesor::findOrFail($id);
+
        $data = [
            "grados"=>$grados,
-           "titulo"=>"Asignar Profesor"
+           "titulo"=>"Asignar Profesor",
+           "profesor"=>$profesor,
        ];
        
      return view('profesoresAsignar/detalle',$data);
     }
+
+    public function storeAsignarCurso(Request $request){
+        $malla_ids = $request->input('malla_ids');
+        $profesor_id = $request->input('profesor_id');
+        
+        for($i = 0; $i < count($malla_ids) ; $i++){
+            Malla::where('id',$malla_ids[$i])->update(
+               ['profesor_id'=>$profesor_id,
+               ]);
+        }
+        return redirect("/profesores/asignarCurso");
+    }
+
     public function enviarComunicado(Request $request){
         
         set_time_limit(300);
