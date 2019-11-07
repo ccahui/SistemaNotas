@@ -2,7 +2,7 @@
     <thead>
         <tr>
             <th>Apellidos y Nombres</th>
-            <th>Nro. Cursos</th>
+            <th>Nro. Cursos Dictados</th>
             <th>Operaciones</th>
         </tr>
     </thead>
@@ -13,7 +13,7 @@
             <td>{{$profesor->apellido }} {{$profesor->nombre }} </td>
             <td>{{$profesor->cursos->count()}}</td>
             <td>
-                <a href="{{ url("/profesores/asignarCurso/{$profesor->id}") }}" class="btn-small blue">Asignar
+                <a href="{{ url("/profesores/asignarCurso/{$profesor->id}") }}" class="btn-small">Asignar
                     Cursos</a>
             </td>
         </tr>

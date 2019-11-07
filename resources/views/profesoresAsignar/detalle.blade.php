@@ -63,7 +63,8 @@
     @endforeach
   </div>
   <div class="">
-    <button type="submit">Guardar</button>
+    <button type="submit" class="btn blue">Guardar Cambios</button>
+  <a href="{{url("/profesores/asignarCurso")}}" class="btn ">Cancelar</a>
   </div>
   </form>
 </div>
