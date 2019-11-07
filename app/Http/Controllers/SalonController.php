@@ -53,7 +53,9 @@ class SalonController extends Controller
 
         
         $data = request()->all();
-        Salon::create($data);
+        $salon = Salon::create($data);
+        Salon::malla($salon);
+
         return redirect("/salones");
     }
 

@@ -29,6 +29,25 @@ class Curso extends Model
         return $this->belongsToMany(Profesor::class,'salon_curso_profesor','curso_id','profesor_id')->withPivot('salon_id');
     }
 
+    public static function malla($curso){
+        
+        $grado = $curso->grado;
+        $salones = $grado->salones;
+        
+        foreach($salones as $salon){
+            $curso->salones()->attach($salon->id);
+        }
+
+        /*TODO */
+        $alumnos = $grado->alumnos;
+        foreach($alumnos as $alumno){
+            $curso->alumnos()->attach($alumno->id);
+        }
+
+        return $curso->salones;
+    }
+
+    
     
     
     

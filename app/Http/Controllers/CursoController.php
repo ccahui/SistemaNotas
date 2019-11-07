@@ -54,6 +54,8 @@ class CursoController extends Controller
 
         $data = request()->all();
         $curso = Curso::create($data);
+            Curso::malla($curso);
+
         return redirect("/cursos");
     }
 

@@ -33,5 +33,17 @@ class Salon extends Model
         return $this->grado->cursos;
     }
 
+    public static function malla($salon){
+        
+        $grado = $salon->grado;
+        $cursos = $grado->cursos;
+        
+        foreach($cursos as $curso){
+            $salon->cursos()->attach($curso->id);
+        }
+
+        return $salon->cursos;
+    }
+
 }
 
