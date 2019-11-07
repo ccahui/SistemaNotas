@@ -28,5 +28,15 @@ class Alumno extends Model
         return static::where('gmail',$email)->first();
     }
 
+    public static function matricular($alumno){
+        $grado = $alumno->getGrado();
+        $cursos = $grado->cursos;
+        
+        foreach($cursos as $curso){
+            $alumno->cursos()->attach($curso->id);
+        }
+
+        return $alumno->cursos;
+    }
 
 }

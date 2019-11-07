@@ -54,9 +54,12 @@ class AlumnoController extends Controller
             'salon_id'=>'required',
             'gmail'=>'required|email|unique:alumnos',
         ]);
-
+        
         $data = request()->all();
         $alumno = Alumno::create($data);
+        
+        Alumno::matricular($alumno);
+        
         return redirect("/alumnos");
     }
 
@@ -144,7 +147,6 @@ class AlumnoController extends Controller
             'titulo'=>'Buscar Alumno',
             'buscar'=>$buscar,
             'alumnos'=>$alumnos
-
         ];
 
         return view('alumnos/search',$data);
