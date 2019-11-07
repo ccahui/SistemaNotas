@@ -140,6 +140,7 @@ class AlumnoController extends Controller
         if($buscar){
             $alumnos = Alumno::where('apellido', 'like', "%$buscar%")
             ->orWhere('nombre', 'like', "%$buscar%")
+            ->orWhere('id', $buscar)
             ->get();
         }
        

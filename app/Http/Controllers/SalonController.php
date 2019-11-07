@@ -47,10 +47,11 @@ class SalonController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'seccion'=>'required',
+            'seccion'=>'required|unique_with:salones,grado_id',
             'grado_id'=>'required',
         ]);
 
+        
         $data = request()->all();
         Salon::create($data);
         return redirect("/salones");
@@ -104,7 +105,7 @@ class SalonController extends Controller
 
         /* TODO */
         $request->validate([
-            'seccion'=>'required',
+            'seccion'=>'required|unique_with:salones,grado_id,'.$salon->id,
             'grado_id'=>'required',
         ]);
 

@@ -17,7 +17,6 @@
                 </div>
         
         </form>
-            {{$buscar}}
 </div>
 @if ($buscar)
     <h6>Resultados Obtenidos: </h6>

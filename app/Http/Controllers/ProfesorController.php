@@ -131,6 +131,7 @@ class ProfesorController extends Controller
         if($buscar){
             $profesores = Profesor::where('apellido', 'like', "%$buscar%")
             ->orWhere('nombre', 'like', "%$buscar%")
+            ->orWhere('id', $buscar)
             ->get();
         }
        
