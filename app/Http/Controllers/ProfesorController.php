@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Profesor;
 use App\Models\Grado;
+use App\Models\Salon;
 
 class ProfesorController extends Controller
 {
@@ -158,5 +159,24 @@ class ProfesorController extends Controller
        ];
        
      return view('profesoresAsignar/detalle',$data);
+    }
+    public function enviarComunicado(Request $request){
+        
+        set_time_limit(300);
+        $asunto = $request->input('asunto');
+        $contenido = $request->input('contenido');
+        $idSalon = $request->input('idsalon');
+        $alumnos = Salon::findOrFail($idSalon)->alumnos;
+
+        foreach($alumnos as $a){
+            $aprueba = $a->gmail;
+            $data = array('name' =>$contenido,);
+
+            \Mail::send('emails.pruebaec', $data, function($message) use ($asunto, $aprueba){
+                $message->from('Colegio@gmail.com', 'Leer todo el comunicado');
+                $message->to($aprueba)->subject($asunto);
+            });
+        }
+        return "Tu email ha sido enviado correctamente";
     }
 }
