@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Auth;
 use App\Models\Alumno;
 use App\Models\Profesor;
 use App\Models\Curso;
@@ -13,9 +13,12 @@ use App\Models\Nota;
 
 class NotasController extends Controller
 {
-    public function show($id)
+    public function show()
     {
-        $alumno = Alumno::findOrFail($id);
+        
+        $user = Auth::user();
+        $alumno = Alumno::findByEmail($user->email);
+
         $cursos = $alumno->cursos;
         $salon = $alumno->salon;
         $data = [
@@ -27,9 +30,11 @@ class NotasController extends Controller
         return view('notas/show', $data);
     }
 
-    public function showNotasProfesor($id){
+    public function showNotasProfesor(){
        
-        $profesor = Profesor::findOrFail($id);
+        $user = Auth::user();
+        $profesor = Profesor::findByEmail($user->email);
+
         $cursosSalones = $this-> obtenerSalonesQueDicto($profesor);
         $data = [
             'titulo' => 'Registro de Notas',
@@ -40,17 +45,16 @@ class NotasController extends Controller
         return view('notas/showNotasProfesor',$data);
     }
     
-    public function showNotasProfesorDetalle(Request $request, $id){
+    public function showNotasProfesorDetalle(Request $request){
     
+        $user = Auth::user();
+        $profesor = Profesor::findByEmail($user->email);
+
         $idCurso = $request->query('curso');
         $idSalon = $request->query('salon');
 
-
-        $profesor = Profesor::findOrFail($id);
         $curso = Curso::findOrFail($idCurso);
         $salon = Salon::findOrFail($idSalon);
-
-
 
         $alumnos = $this-> obtenerAlumnosDeUnSalonYUnCurso($curso, $salon);
         $data = [

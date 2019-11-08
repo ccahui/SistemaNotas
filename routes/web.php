@@ -40,9 +40,9 @@ Route::get('/cursos/search','CursoController@search')->middleware('admin');
 
 
 /*GESTION DE NOTAS */
-Route::get('/notas/alumno/{id}','NotasController@show')->middleware('alumno');
-Route::get('/notas/profesor/{id}','NotasController@showNotasProfesor')->middleware('profesor');
-Route::get('/notas/profesor/{id}/detalle','NotasController@showNotasProfesorDetalle')->middleware('profesor');;;
+Route::get('/notas/alumno','NotasController@show')->middleware('alumno');
+Route::get('/notas/profesor','NotasController@showNotasProfesor')->middleware('profesor');
+Route::get('/notas/profesor/detalle','NotasController@showNotasProfesorDetalle')->middleware('profesor');;;
 Route::put('/notas','NotasController@storeNotas')->middleware('profesor');
 
 

@@ -79,14 +79,14 @@
     </div>
 
     <div class="content mt">
-        <a href="{{url('/notas/alumno/1')}}" class="">
+        <a href="{{url('/notas/alumno')}}" class="">
             <div style="display: inline-block">
                 <i class="material-icons large mx">account_circle</i>
                 <span style="display: block">Alumno</span>
             </div>
 
         </a>
-        <a href="{{url('/notas/profesor/1')}}">
+        <a href="{{url('/notas/profesor')}}">
             <div style="display: inline-block">
                 <i class="material-icons large mx">people</i>
                 <span style="display: block">Profesor</span>
