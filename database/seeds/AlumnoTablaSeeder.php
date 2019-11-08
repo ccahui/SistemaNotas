@@ -13,7 +13,7 @@ class AlumnoTablaSeeder extends Seeder
      */
     public function run()
     {
-        $cantidadAlumnos = 20;
+        $cantidadAlumnos = 1;
         $this->crearAlumnosEnTodosLosSalones($cantidadAlumnos);
     }
 

@@ -13,6 +13,7 @@ class GradosTablaSeeder extends Seeder
     {
         $this->insertarGradosDeColegio();
     }
+
     private function insertarGradosDeColegio() {
         
         Grado::create([

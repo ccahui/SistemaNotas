@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
             'profesores',
             'alumnos',
             'salon_curso_profesor',
-            'notas'
+            'notas',
+            'users'
         ]);
 
         $this->call(GradosTablaSeeder::class);
@@ -28,7 +29,8 @@ class DatabaseSeeder extends Seeder
         $this->call(AlumnoTablaSeeder::class);
         $this->call(PivotCursoSalonTablaSeeder::class);
         $this->call(NotasTableSeeder::class);
-               
+        $this->call(UsuariosInicialesTableSeeder::class);
+        
     }
 
     private function eliminarDatosDeLasTablas(array $tablas){
