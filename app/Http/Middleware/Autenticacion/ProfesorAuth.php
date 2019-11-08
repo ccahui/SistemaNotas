@@ -19,7 +19,7 @@ class ProfesorAuth
     public function handle($request, Closure $next)
     {
           if(!(Auth::check())){    
-            return redirect("/");
+            return redirect("/login");
         } else {
             $user = Auth::user();
             $profesor = Profesor::findByEmail($user->email);

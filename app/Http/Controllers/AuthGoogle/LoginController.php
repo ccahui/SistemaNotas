@@ -18,7 +18,9 @@ class LoginController extends Controller
         return Socialite::driver('google')->redirect();
     }
     
-    public function callback(){
+    public function callback(Request $request){
+
+        $tipo = $request->query('type');
 
         $userGoogle = Socialite::driver('google')->user();
         
@@ -29,14 +31,12 @@ class LoginController extends Controller
         /*TODO */
         if($admin!= null ){    
             Auth::login($admin);
-            return redirect("/alumnos");
         } else if($profesor!=null){
             Auth::login($profesor);
-            return redirect("/notas/profesor/1");
+            
         }
         else if ($alumno != null){
             Auth::login($alumno);
-            return redirect("/notas/alumno/1");
         } 
         
         return redirect("/");

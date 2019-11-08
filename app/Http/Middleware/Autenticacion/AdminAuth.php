@@ -19,7 +19,7 @@ class AdminAuth
     public function handle($request, Closure $next)
     {
         if(!(Auth::check())){    
-            return redirect("/");
+            return redirect("/login");
         } else {
             $user = Auth::user();
             $admin = User::findByEmail($user->email);

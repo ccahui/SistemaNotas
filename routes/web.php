@@ -17,37 +17,37 @@ Route::get('/', function () {
 
 
 /*ASIGNAR CURSO PROFESOR */
-Route::get('/profesores/asignarCurso','ProfesorController@asignarCurso');
-Route::get('/profesores/asignarCurso/{id}','ProfesorController@asignarDetalle');
-Route::post('/profesores/asignarCurso','ProfesorController@storeAsignarCurso');
+Route::get('/profesores/asignarCurso','ProfesorController@asignarCurso')->middleware('admin');
+Route::get('/profesores/asignarCurso/{id}','ProfesorController@asignarDetalle')->middleware('admin');
+Route::post('/profesores/asignarCurso','ProfesorController@storeAsignarCurso')->middleware('admin');
 
 
 
 /* PARA EXPORT e importar EXCEL*/
-Route::get('/exportarNotas/profesor/{id}','ExportNotasController@exportNotasExcel');
-Route::post('/importarNotas/profesor/{id}','ImportController@notas');
+Route::get('/exportarNotas/profesor/{id}','ExportNotasController@exportNotasExcel')->middleware('profesor');
+Route::post('/importarNotas/profesor/{id}','ImportController@notas')->middleware('profesor');
 
 /*enviar comunicado*/
-Route::post('/profesores/enviarcomunicado','ProfesorController@enviarComunicado');
+Route::post('/profesores/enviarcomunicado','ProfesorController@enviarComunicado')->middleware('profesor');
 
 Route::get('/login','AuthGoogle\LoginController@login');
 Route::get('/login/callback','AuthGoogle\LoginController@callback');
 Route::get('/logout','AuthGoogle\LoginController@logout');
 
-Route::get('/alumnos/search','AlumnoController@search');
-Route::get('/profesores/search','ProfesorController@search');
-Route::get('/cursos/search','CursoController@search');
+Route::get('/alumnos/search','AlumnoController@search')->middleware('admin');
+Route::get('/profesores/search','ProfesorController@search')->middleware('admin');
+Route::get('/cursos/search','CursoController@search')->middleware('admin');
 
 
 /*GESTION DE NOTAS */
-Route::get('/notas/alumno/{id}','NotasController@show');
-Route::get('/notas/profesor/{id}','NotasController@showNotasProfesor');
-Route::get('/notas/profesor/{id}/detalle','NotasController@showNotasProfesorDetalle');
-Route::put('/notas','NotasController@storeNotas');
+Route::get('/notas/alumno/{id}','NotasController@show')->middleware('alumno');
+Route::get('/notas/profesor/{id}','NotasController@showNotasProfesor')->middleware('profesor');
+Route::get('/notas/profesor/{id}/detalle','NotasController@showNotasProfesorDetalle')->middleware('profesor');;;
+Route::put('/notas','NotasController@storeNotas')->middleware('profesor');
 
 
 /* CRUDs */
-Route::resource('alumnos', 'AlumnoController');
-Route::resource('profesores', 'ProfesorController');
-Route::resource('cursos', 'CursoController');
-Route::resource('salones', 'SalonController');
+Route::resource('alumnos', 'AlumnoController')->middleware('admin');
+Route::resource('profesores', 'ProfesorController')->middleware('admin');
+Route::resource('cursos', 'CursoController')->middleware('admin');
+Route::resource('salones', 'SalonController')->middleware('admin');

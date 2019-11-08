@@ -19,8 +19,9 @@ class AlumnoAuth
     public function handle($request, Closure $next)
     {
         if(!(Auth::check())){    
-            return redirect("/");
+            return redirect("/login");
         } else {
+            
             $user = Auth::user();
             $alumno = Alumno::findByEmail($user->email);
             if($alumno == null){
