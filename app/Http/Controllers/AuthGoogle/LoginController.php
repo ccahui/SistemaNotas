@@ -31,6 +31,7 @@ class LoginController extends Controller
             Auth::login($admin);
             return redirect("/alumnos");
         } else if($profesor!=null){
+            Auth::login($profesor);
             return redirect("/notas/profesor/1");
         }
         else if ($alumno != null){
