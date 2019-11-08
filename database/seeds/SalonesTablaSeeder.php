@@ -21,7 +21,6 @@ class SalonesTablaSeeder extends Seeder
             $grado->salones()->createMany([
                 ['seccion'=> "A"],
                 ['seccion'=> "B"],
-                ['seccion'=> "C"],
              ]);
         }
     }

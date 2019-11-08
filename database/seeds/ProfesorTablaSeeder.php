@@ -12,7 +12,7 @@ class ProfesorTablaSeeder extends Seeder
      */
     public function run()
     {
-        $this -> insertarProfesores(10);
+        $this -> insertarProfesores(5);
     }
     
     private function insertarProfesores($cantidad) {

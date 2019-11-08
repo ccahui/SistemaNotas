@@ -29,6 +29,8 @@ class CursosTablaSeeder extends Seeder
                ['nombre'=> "Fisica $grado->numero"],
             ]);
         }
+
+        
     }
     
 }
