@@ -30,6 +30,9 @@ Route::post('/importarNotas/profesor/{id}','ImportController@notas')->middleware
 /*enviar comunicado*/
 Route::post('/profesores/enviarcomunicado','ProfesorController@enviarComunicado')->middleware('profesor');
 
+/*ranking*/
+Route::get('/notas/ranking','NotasController@ranking')->middleware('admin');
+
 Route::get('/login','AuthGoogle\LoginController@login');
 Route::get('/login/callback','AuthGoogle\LoginController@callback');
 Route::get('/logout','AuthGoogle\LoginController@logout');

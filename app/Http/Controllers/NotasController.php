@@ -10,6 +10,7 @@ use App\Models\Profesor;
 use App\Models\Curso;
 use App\Models\Salon;
 use App\Models\Nota;
+use App\Models\Grado;
 
 class NotasController extends Controller
 {
@@ -108,5 +109,25 @@ public function obtenerAlumnosDeUnSalonYUnCurso($curso, $salon){
     $alumnos = $curso->alumnos()->where('salon_id',$salon->id)->get();
 
     return $alumnos;
+}
+
+public function ranking(){
+
+    $grados = Grado :: all();
+    $gradosAlumnos = array();
+        foreach($grados as $grado){
+            $alumnos = $grado->alumnos()->take(2)->get();
+            $array = array(
+                'grado'=>$grado,
+                'alumnos'=>$alumnos
+            );
+            array_push($gradosAlumnos, $array);
+        }
+    $data = [
+        'titulo' => 'Ranking general del colegio',
+        'gradosAlumnos' => $gradosAlumnos,
+    ];
+    
+    return view('reportes/ranking',$data);
 }
 }

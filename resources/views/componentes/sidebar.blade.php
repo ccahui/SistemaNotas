@@ -40,4 +40,11 @@
             <li><a href="{{url("/salones/create")}}">Crear Salon</a></li>
         </ul>
     </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle red">play_arrow</i>
+      <span class="title">Reportes</span>
+      <ul>
+            <li><a href="{{url("/notas/ranking")}}">Ranking</a></li>
+        </ul>
+    </li>
   </ul>
