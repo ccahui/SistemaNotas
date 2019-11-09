@@ -7,7 +7,7 @@ use App\Models\Profesor;
 use App\User;
 use App\Models\Salon;
 
-class UsuariosInicialesTableSeeder extends Seeder
+class DataInicialSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -53,6 +53,4 @@ class UsuariosInicialesTableSeeder extends Seeder
             'email'=>$gmail
         ]);
     }
-
-
 }

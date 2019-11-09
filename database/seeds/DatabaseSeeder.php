@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AlumnoTablaSeeder::class);
         $this->call(PivotCursoSalonTablaSeeder::class);
         $this->call(NotasTableSeeder::class);
-        $this->call(UsuariosInicialesTableSeeder::class);
+        $this->call(DataInicialSeeder::class);
         
     }
 
