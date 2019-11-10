@@ -194,6 +194,8 @@ class ProfesorController extends Controller
                 $message->to($aprueba)->subject($asunto);
             });
         }
-        return "Tu email ha sido enviado correctamente";
+        $url = redirect()->getUrlGenerator()->previous();
+        
+        return redirect($url);
     }
 }

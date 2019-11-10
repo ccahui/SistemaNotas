@@ -133,7 +133,9 @@ class CursoController extends Controller
         $cursos = [];
        
         if($buscar){
-            $cursos = Curso::where('nombre', 'like', "%$buscar%")->get();
+            $cursos = Curso::where('nombre', 'like', "%$buscar%")
+                ->orWhere('id', $buscar)
+                ->get();
         }
        
         $data = [
