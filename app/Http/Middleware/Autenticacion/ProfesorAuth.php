@@ -21,7 +21,6 @@ class ProfesorAuth
           if(!(Auth::guard('profesor')->check())){    
             return redirect("/login");
         } 
-            $user = Auth::guard('profesor')->user();
     
         
         return $next($request);

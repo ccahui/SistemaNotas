@@ -7,9 +7,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Alumno extends Authenticatable
 {
+    protected $guard = 'alumno';
     protected $table = 'alumnos';
     protected $fillable = [
-        'nombre', 'apellido', 'salon_id','gmail'
+        'nombre', 'apellido', 'salon_id','gmail','pasword'
     ];
 
     public function salon(){

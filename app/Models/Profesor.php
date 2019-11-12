@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Models;
+use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 class Profesor extends Authenticatable
 {
@@ -10,8 +12,10 @@ class Profesor extends Authenticatable
 
     protected $table = 'profesores';
     protected $fillable = [
-        'nombre', 'apellido','gmail','email', 'password',
+        'nombre', 'apellido','gmail', 'password',
     ];
+
+   
     /** TODO */
     public function cursos(){
         return $this->belongsToMany(Curso::class,'salon_curso_profesor','profesor_id','curso_id')->withPivot('salon_id');;

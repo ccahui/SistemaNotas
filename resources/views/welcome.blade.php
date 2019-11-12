@@ -69,7 +69,7 @@
         <div class="content">
             <div class="title ">
                 Iniciar Sesión
-
+{{-- 
                 <br>
                 @auth
                 Admin : 
@@ -80,6 +80,11 @@
                 Profesor:
                 {{Auth::guard('profesor')->user()->gmail}}
                @endauth
+               <br>
+               @auth('alumno')
+               Alumno:
+               {{Auth::guard('alumno')->user()->gmail}}
+              @endauth--}}
             </div>
         </div>
 

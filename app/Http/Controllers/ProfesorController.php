@@ -54,7 +54,9 @@ class ProfesorController extends Controller
         ]);
 
         $data = request()->all();
-        Profesor::create($data);
+
+        $profesor = Profesor::create($data);
+     //   dd($profesor);
         return redirect("/profesores");
     }
 

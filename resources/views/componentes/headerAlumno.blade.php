@@ -29,8 +29,8 @@
                     </a>
                     <ul class="right hide-on-med-and-down">
                       
-                      @auth
-                    <li><a class="dropdown-trigger btn white indigo-text" href="#!" data-target="dropdown1">{{Auth::user()->email}}<i class="material-icons right">arrow_drop_down</i></a></li>
+                      @auth('alumno') 
+                    <li><a class="dropdown-trigger btn white indigo-text" href="#!" data-target="dropdown1">{{Auth::guard('alumno')->user()->gmail}}<i class="material-icons right">arrow_drop_down</i></a></li>
                   
                       <!-- Dropdown Structure -->
                         <ul id="dropdown1" class="dropdown-content">

@@ -11,7 +11,6 @@ use App\Models\Profesor;
 use Illuminate\Support\Facades\Auth;
 use Socialite;
 
-
 class LoginController extends Controller
 {
     public function login(){
@@ -27,23 +26,19 @@ class LoginController extends Controller
         $admin = User::findByEmail($userGoogle->email);
         $profesor = Profesor::findByEmail($userGoogle->email);
         $alumno = Alumno::findByEmail($userGoogle->email);
-
+        
         /*TODO */
         if($admin!= null ){    
             Auth::login($admin); 
         }
         if($profesor!=null){
-            $credentials = [
-                'password'=>'1234',
-                'gmail'=> $profesor->gmail,
-            ];
+          
            Auth::guard('profesor')->login($profesor);
         
         }
-       /* if ($alumno != null){
-            dd('a');
-            Auth::login($alumno);
-        }*/ 
+       if ($alumno != null){
+            Auth::guard('alumno')->login($alumno);
+        }
         return redirect("/");
     }
 
@@ -53,6 +48,10 @@ class LoginController extends Controller
         }
         if(Auth::guard('profesor')->check()){
             Auth::guard('profesor')->logout();
+        }
+        
+        if(Auth::guard('alumno')->check()){
+            Auth::guard('alumno')->logout();
         }
         
         

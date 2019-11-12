@@ -49,7 +49,11 @@ return [
         'profesor' =>[
             'driver'=>'session',
             'provider'=>'profesores',
+        ], 'alumno' =>[
+            'driver'=>'session',
+            'provider'=>'alumnos',
         ]
+        
 
     ],
 
@@ -78,7 +82,12 @@ return [
         'profesores'=>[
             'driver' => 'eloquent',
             'model' => App\Models\Profesor::class,
+        ],
+         'alumnos'=>[
+            'driver' => 'eloquent',
+            'model' => App\Models\Alumno::class,
         ]
+
 
         // 'users' => [
         //     'driver' => 'database',
