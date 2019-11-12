@@ -31,9 +31,16 @@ class LoginController extends Controller
         /*TODO */
         if($admin!= null ){    
             Auth::login($admin);
-        } else if($profesor!=null){
-            Auth::login($profesor);
             
+        } else if($profesor!=null){
+            $credentials = [
+                'password'=>'1234',
+                'gmail'=> $profesor->gmail,
+                'email'=>$profesor->gmail,
+            ];
+           
+           Auth::guard('profesor')->login($profesor);
+        
         }
         else if ($alumno != null){
             Auth::login($alumno);

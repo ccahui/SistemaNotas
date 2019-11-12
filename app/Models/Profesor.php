@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Profesor extends Model
+class Profesor extends Authenticatable
 {
+    protected $guard = 'profesor';
+
     protected $table = 'profesores';
     protected $fillable = [
-        'nombre', 'apellido','gmail'
+        'nombre', 'apellido','gmail','email', 'password',
     ];
     /** TODO */
     public function cursos(){

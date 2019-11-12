@@ -33,7 +33,7 @@ class NotasController extends Controller
 
     public function showNotasProfesor(){
        
-        $user = Auth::user();
+        $user = Auth::guard('profesor')->user();
         $profesor = Profesor::findByEmail($user->email);
 
         $cursosSalones = $this-> obtenerSalonesQueDicto($profesor);
@@ -48,7 +48,7 @@ class NotasController extends Controller
     
     public function showNotasProfesorDetalle(Request $request){
     
-        $user = Auth::user();
+        $user = Auth::guard('profesor')->user();
         $profesor = Profesor::findByEmail($user->email);
 
         $idCurso = $request->query('curso');

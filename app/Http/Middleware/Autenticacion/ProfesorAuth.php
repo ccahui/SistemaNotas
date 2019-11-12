@@ -18,15 +18,13 @@ class ProfesorAuth
      */
     public function handle($request, Closure $next)
     {
-          if(!(Auth::check())){    
+          if(!(Auth::guard('profesor')->check())){    
             return redirect("/login");
-        } else {
-            $user = Auth::user();
-            $profesor = Profesor::findByEmail($user->email);
-            if($profesor == null){
-                return redirect("/");
-            }
-        }
+        } 
+            $user = Auth::guard('profesor')->user();
+    
+
+        
         return $next($request);
     }
 }

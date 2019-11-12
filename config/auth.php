@@ -45,7 +45,12 @@ return [
             'driver' => 'token',
             'provider' => 'users',
             'hash' => false,
-        ],
+        ], 
+        'profesor' =>[
+            'driver'=>'session',
+            'provider'=>'profesores',
+        ]
+
     ],
 
     /*
@@ -70,6 +75,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+        'profesores'=>[
+            'driver' => 'eloquent',
+            'model' => App\Models\Profesor::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

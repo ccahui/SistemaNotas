@@ -6,6 +6,7 @@ use App\Models\Alumno;
 use App\Models\Profesor;
 use App\User;
 use App\Models\Salon;
+use Illuminate\Support\Facades\Hash;
 
 class DataInicialSeeder extends Seeder
 {
@@ -40,10 +41,14 @@ class DataInicialSeeder extends Seeder
         Alumno::matricular($alumno);
     }
     private function factoryProfesor($nombre, $apellido, $gmail){
-        $profesor = Profesor::create([
+       
+        $password = 1234;
+        Profesor::create([
             'nombre' => $nombre,
             'apellido' => $apellido,
-            'gmail'=>$gmail
+            'gmail'=>$gmail,
+            'email'=>$gmail,
+            'password'=>Hash::make($password),
         ]);
     }
     private function factoryAdmin($nombre, $apellido, $gmail){
