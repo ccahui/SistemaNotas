@@ -34,7 +34,7 @@ class NotasController extends Controller
     public function showNotasProfesor(){
        
         $user = Auth::guard('profesor')->user();
-        $profesor = Profesor::findByEmail($user->email);
+        $profesor = Profesor::findByEmail($user->gmail);
 
         $cursosSalones = $this-> obtenerSalonesQueDicto($profesor);
         $data = [

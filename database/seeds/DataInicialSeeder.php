@@ -47,7 +47,6 @@ class DataInicialSeeder extends Seeder
             'nombre' => $nombre,
             'apellido' => $apellido,
             'gmail'=>$gmail,
-            'email'=>$gmail,
             'password'=>Hash::make($password),
         ]);
     }

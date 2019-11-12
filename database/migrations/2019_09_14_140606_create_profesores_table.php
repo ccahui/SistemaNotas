@@ -18,7 +18,6 @@ class CreateProfesoresTable extends Migration
             $table->string('nombre');
             $table->string('apellido');
             $table->string('gmail')->unique();
-            $table->string('email')->nullable();
             $table->string('password')->nullable();
             $table->timestamps();
         });

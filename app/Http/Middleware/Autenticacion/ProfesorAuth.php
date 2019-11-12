@@ -23,7 +23,6 @@ class ProfesorAuth
         } 
             $user = Auth::guard('profesor')->user();
     
-
         
         return $next($request);
     }

@@ -30,22 +30,20 @@ class LoginController extends Controller
 
         /*TODO */
         if($admin!= null ){    
-            Auth::login($admin);
-            
-        } else if($profesor!=null){
+            Auth::login($admin); 
+        }
+        if($profesor!=null){
             $credentials = [
                 'password'=>'1234',
                 'gmail'=> $profesor->gmail,
-                'email'=>$profesor->gmail,
             ];
-           
            Auth::guard('profesor')->login($profesor);
         
         }
-        else if ($alumno != null){
+       /* if ($alumno != null){
+            dd('a');
             Auth::login($alumno);
-        } 
-        
+        }*/ 
         return redirect("/");
     }
 
@@ -53,6 +51,10 @@ class LoginController extends Controller
         if(Auth::check()){
             Auth::logout();
         }
+        if(Auth::guard('profesor')->check()){
+            Auth::guard('profesor')->logout();
+        }
+        
         
         return redirect("/");
     }

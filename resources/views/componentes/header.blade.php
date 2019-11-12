@@ -36,13 +36,17 @@
                       <li><a href="{{url('/salones')}}">Salones</a></li>
                       
                       @auth
-                    <li><a class="dropdown-trigger btn white indigo-text" href="#!" data-target="dropdown1">{{Auth::user()->email}}<i class="material-icons right">arrow_drop_down</i></a></li>
+
+
+                      <li><a class="dropdown-trigger btn white indigo-text" href="#!" data-target="dropdown1">{{Auth::user()->email}}<i class="material-icons right">arrow_drop_down</i></a></li>
                   
                       <!-- Dropdown Structure -->
                         <ul id="dropdown1" class="dropdown-content">
                         <li><a href="{{url('/logout')}}" class="indigo-text">Cerrar Sesión</a></li>
-                      </ul>    
+                      </ul>   
+                      
                       @endauth
+                      
                       
                   
                     </ul>

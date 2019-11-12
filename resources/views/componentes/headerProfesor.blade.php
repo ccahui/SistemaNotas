@@ -30,16 +30,16 @@
                     <ul class="right hide-on-med-and-down">
                     <li><a href="{{url('/notas/profesor')}}">Mis Cursos</a></li>
                       
-                      @auth
-                    <li><a class="dropdown-trigger btn white indigo-text" href="#!" data-target="dropdown1">{{Auth::user()->email}}<i class="material-icons right">arrow_drop_down</i></a></li>
+                     
+                      
+                      @auth("profesor")
+                      <li><a class="dropdown-trigger btn white indigo-text" href="#!" data-target="dropdown1">{{Auth::guard('profesor')->user()->gmail}}<i class="material-icons right">arrow_drop_down</i></a></li>
                   
                       <!-- Dropdown Structure -->
                         <ul id="dropdown1" class="dropdown-content">
                         <li><a href="{{url('/logout')}}" class="indigo-text">Cerrar Sesión</a></li>
-                      </ul>    
-                      @endauth
-                      
-                  
+                      </ul>   
+                     @endauth
                     </ul>
                   </div>
                 </nav>
