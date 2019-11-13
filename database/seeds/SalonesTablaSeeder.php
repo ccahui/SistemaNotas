@@ -20,7 +20,6 @@ class SalonesTablaSeeder extends Seeder
         foreach($grados as $grado){
             $grado->salones()->createMany([
                 ['seccion'=> "A"],
-                ['seccion'=> "B"],
              ]);
         }
     }

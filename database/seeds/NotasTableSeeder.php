@@ -22,9 +22,9 @@ class NotasTableSeeder extends Seeder
                 foreach ($cursos_en_un_grado as $curso_dictado_en_un_grado ) {    
                     $curso_id = $curso_dictado_en_un_grado->id;
                     $alumno_en_un_grado->cursos()->attach($curso_id,[
-                        'notas1' => rand(1,20),
-                        'notas2' => rand(1,20),
-                        'notas3' => rand(1,20),
+                        'notas1' =>null,
+                        'notas2' =>null,
+                        'notas3' =>null,
                     ]);
                 }
             }

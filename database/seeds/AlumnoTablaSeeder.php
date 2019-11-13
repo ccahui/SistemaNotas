@@ -13,16 +13,21 @@ class AlumnoTablaSeeder extends Seeder
      */
     public function run()
     {
-        $cantidadAlumnos = 1;
+        $cantidadAlumnos = 5;
         $this->crearAlumnosEnTodosLosSalones($cantidadAlumnos);
     }
 
     public function crearAlumnosEnTodosLosSalones($cantidadAlumnos){
         $salones = Salon::all();
+        $i = 0;
         foreach($salones as $salon){
-            factory(Alumno::class, $cantidadAlumnos)->create([
-                'salon_id'=>$salon->id
-            ]);
+            if($i != 0){
+                factory(Alumno::class, $cantidadAlumnos)->create([
+                    'salon_id'=>$salon->id
+                ]);
+            }
+            $i++;
+            
         }
 
         
