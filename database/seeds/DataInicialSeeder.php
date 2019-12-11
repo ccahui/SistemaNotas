@@ -22,6 +22,8 @@ class DataInicialSeeder extends Seeder
         $this->inicializarUsuarios("Raul Rene","Laura Anccasi","rlauraa@unsa.edu.pe");
         $this->inicializarUsuarios("Willian","Orihuela Trujillo","worihuela@unsa.edu.pe");
         $this->inicializarUsuarios("Diego","Kari Ninacansaya","dkari@unsa.edu.pe");
+        $this->inicializarUsuarios("Admin","Admin Example","frodo7495@gmail.com");
+
     }
     private function inicializarUsuarios($nombre, $apellido, $gmail){
         
